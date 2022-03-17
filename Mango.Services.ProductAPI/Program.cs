@@ -1,4 +1,5 @@
 global using Mango.Services.ProductAPI.DbContexts;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
