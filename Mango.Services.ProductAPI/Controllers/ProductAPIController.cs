@@ -42,6 +42,10 @@ namespace Mango.Services.ProductAPI.Controllers
             {
                 ProductDto productDto = await _pRep.GetProductById(id);
                 _response.Result = productDto; //default true if we assign some value to return
+                if (productDto == null)
+                {
+                    _response.IsSuccess = false;
+                }
             }
             catch (Exception ex)
             {
