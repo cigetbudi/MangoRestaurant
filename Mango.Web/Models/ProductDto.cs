@@ -1,4 +1,4 @@
-﻿namespace Mango.Web.Models.Models
+﻿namespace Mango.Web.Models
 {
     public class ProductDto
     {

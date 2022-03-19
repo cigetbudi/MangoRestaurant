@@ -1,5 +1,4 @@
 ﻿using Mango.Web.Models;
-using Mango.Web.Models.Models;
 using Mango.Web.Services.IServices;
 
 namespace Mango.Web.Services
@@ -28,9 +27,9 @@ namespace Mango.Web.Services
         {
             return await this.SendAsync<T>(new ApiRequest()
             {
-                ApiType= SD.ApiType.DELETE,
-                Url = SD.ProductAPIBase + "/api/products" +id,
-                AccessToken =""
+                ApiType = SD.ApiType.DELETE,
+                Url = SD.ProductAPIBase + "/api/products" + id,
+                AccessToken = ""
             });
         }
 
@@ -39,28 +38,30 @@ namespace Mango.Web.Services
             return await this.SendAsync<T>(new ApiRequest()
             {
                 ApiType = SD.ApiType.GET,
-                Url = SD.ProductAPIBase +"/api/products",
-                AccessToken =""
+                Url = SD.ProductAPIBase + "/api/products",
+                AccessToken = ""
             });
         }
 
         public async Task<T> GetProductByIdAsync<T>(int id)
         {
-            return await this.SendAsync<T>(new ApiRequest() {
+            return await this.SendAsync<T>(new ApiRequest()
+            {
                 ApiType = SD.ApiType.GET,
-                Url= SD.ProductAPIBase +"/api/products"+id,
-                AccessToken =""
-            
+                Url = $"{SD.ProductAPIBase}/api/products/{id}",
+                AccessToken = ""
+
             });
         }
 
         public async Task<T> UpdateProductAsync<T>(ProductDto productDto)
         {
-            return await this.SendAsync<T>(new ApiRequest() { 
-                ApiType= SD.ApiType.PUT,
+            return await this.SendAsync<T>(new ApiRequest()
+            {
+                ApiType = SD.ApiType.PUT,
                 Data = productDto,
                 Url = SD.ProductAPIBase + "/api/products",
-                AccessToken =""
+                AccessToken = ""
 
             });
         }
