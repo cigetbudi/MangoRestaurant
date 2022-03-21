@@ -47,7 +47,6 @@ namespace Mango.Services.Identity
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
                         "mango"
-
                     }
                 },
             };
